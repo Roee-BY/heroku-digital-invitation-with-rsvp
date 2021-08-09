@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Wedding Invitation</title>
+<link rel="shortcut icon" href="images/title2.png"></link>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="website">
+<meta property="og:url" content="siteurl">
+<meta property="og:type" content="website">
+<meta property="og:description" content="website">
+<meta property="og:image" content="siteurl/images/title2.png">			
+<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+<meta name="robots" content="noindex, follow">
+</head>
+<body>
+<div class="wrapper">
+<div class="inner">
+<form action="signin.php" method="post">
+<label class="form-group">
+<input type="text" class="form-control" pattern="[a-zA-Z0-9\s\-]+"name="un" id="un" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('please fill a valid name')" required>
+<span>username</span>
+<span class="border"></span>
+</label>
+<label class="form-group">
+<input type="password" class="form-control" name="pw" id="pw" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('please fill a valid password')" required>
+<span for="">password</span>
+<span class="border"></span>
+</label>
+<span for=""></span>
+<span class="border"></span>
+</label>
+<button type="submit" class="send">login </button>
+</form>
+</div> 
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+var plus= function(){
+	var amount = document.getElementById("num");	
+	amount.value = parseInt(amount.value) +1;
+}
+var minus= function(){
+	var amount = document.getElementById("num");
+	if (amount.value>0){
+	amount.value = parseInt(amount.value) -1;
+	}
+}
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+</body>
+</html>

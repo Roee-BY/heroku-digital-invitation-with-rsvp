@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Wedding Invitation</title>
+<link rel="shortcut icon" href="images/title2.png"></link>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="website">
+<meta property="og:url" content="siteurl">
+<meta property="og:type" content="website">
+<meta property="og:description" content="website">
+<meta property="og:image" content="siteurl/images/title2.png">			
+<link rel="stylesheet" href="fonts/material-design-iconic-font/css/material-design-iconic-font.min.css">
+
+<link rel="stylesheet" href="css/style.css">
+<meta name="robots" content="noindex, follow">
+</head>
+<body>
+<div class="wrapper">
+<div class="inner">
+<p>
+<img id="myImg" src="images/invite.jpg" alt="invitation" align="center" width="90%">
+</p>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- The Close Button -->
+  <span class="close">&times;</span>
+
+  <!-- Modal Content (The Image) -->
+  <img class="modal-content" id="img01">
+
+  <!-- Modal Caption (Image Text) -->
+  <div id="caption"></div>
+</div>
+<p class="p1">Bride & Groom</p>
+<p>Request the pleasure of your company at their marriage
+<br><br>saturday<br>
+<p class="p2">22-06-noyear</p>
+<p class="p2"> 7:30 pm </p>
+<div style="display:flex; justify-content:center"><img src="images/locationpin.png" class="pin"><p>Abbeywood Estate, </p></div><p>somewhere city</p>
+<br><p>reception to follow</p>
+<br>
+<div style="display:flex; justify-content:center">
+<a href="https://waze.com/ul?ll=32.27033418,34.8369634&navigate=yes"><img src="images/nav.png" class="util"></a>
+<a href="images/event.ics"><img src="images/cal.png" class="util"></a>
+<a href="tel:09-893-3141"><img src="images/call.png" class="util"></a>
+</div>
+<br><p class="p1">RSVP</p>
+<form action="form.php" method="post">
+<label class="form-group">
+<input type="text" class="form-control" pattern="[a-zA-Z\s\-]+"name="fn" id="fn" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('please fill in your name')" required>
+<span>first name</span>
+<span class="border"></span>
+</label>
+<label class="form-group">
+<input type="text" class="form-control" pattern="[a-zA-Z\s\-]+" name="ln" id="ln" oninput="setCustomValidity('')" oninvalid="this.setCustomValidity('please fill in your name')" required>
+<span for="">last name</span>
+<span class="border"></span>
+</label>
+<label class="form-group">
+<input type="tel" id="phone" name="phone" pattern="^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}" class="form-control" oninput="setCustomValidity('')"  oninvalid="this.setCustomValidity('please fill a valid phine number')"  required>
+<span for="">cell number</span>
+<span class="border"></span>
+</label>
+<label class="form-group2">
+<div class="p3">how many?</div>
+<div class="quantity">
+    <button type = "button" class="btn minus1" onclick="javascript:plus()"><img src="images/plus.png" class="buttonimg"></button>
+    <input class="quantity" min="0" value="1" name="num" id="num" type="number">
+    <button type = "button" class="btn add1" onclick="javascript:minus()"><img src="images/minus.png" class="buttonimg"></button>
+</div>
+<span for=""></span>
+<span class="border"></span>
+</label>
+<button type="submit" class="send">Send</button>
+</form>
+</div> 
+<br>
+<div class="inner2">
+<p class="p1">Map</p><center>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12084.508388741287!2d-73.9665138!3d40.7812199!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb9df1f7387a94119!2z16HXoNeY16jXnCDXpNeQ16jXpw!5e0!3m2!1siw!2sil!4v1628512026511!5m2!1siw!2sil" width=80% class="frame" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</center>
+
+</div>
+<br>
+<div class="inner">
+<center>
+<img id="myImg" src="images/1.jpg" alt="invitation" align="center" width="45%">
+<img id="myImg" src="images/2.jpg" alt="invitation" align="center" width="45%">
+<img id="myImg" src="images/3.jpg" alt="invitation" align="center" width="45%">
+<img id="myImg" src="images/4.jpg" alt="invitation" align="center" width="45%">
+<img id="myImg" src="images/5.jpg" alt="invitation" align="center" width="45%">
+<img id="myImg" src="images/6.jpg" alt="invitation" align="center" width="45%">
+<img id="myImg" src="images/7.jpg" alt="invitation" align="center" width="45%">
+<img id="myImg" src="images/8.jpg" alt="invitation" align="center" width="45%">
+</center>
+</div>
+<br>
+<a href="signin.html" style="font-size: 15px">sign in</a>
+</div>
+<script>
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById("myImg");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+var plus= function(){
+	var amount = document.getElementById("num");	
+	amount.value = parseInt(amount.value) +1;
+}
+var minus= function(){
+	var amount = document.getElementById("num");
+	if (amount.value>0){
+	amount.value = parseInt(amount.value) -1;
+	}
+}
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+</body>
+</html>
